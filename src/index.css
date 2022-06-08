@@ -25,3 +25,8 @@ code {
     monospace;
 }
 
+.testclass {
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
