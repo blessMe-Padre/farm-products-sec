@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../Container';
 import about from '../../assets/about.svg';
 
 const AboutSection = styled.section`
