@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../ui/buttons/Button';
-
 import Logo from '../ui/logo/Logo';
 import { Container } from '../Container';
+import Nav from './nav';
 
 const Wrapper = styled.header`
     display: flex;
@@ -28,7 +27,7 @@ const Header = () => {
         <Container>
             <Wrapper>
                 <Logo />
-                <Button link={'/order'}>Купить билет</Button >
+                <Nav />
             </Wrapper>
         </Container>
     )
