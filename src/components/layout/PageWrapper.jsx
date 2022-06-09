@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 import Header from './Header';
 import Footer from './Footer';
-import Main from './../../pages/Main';
-
+import { Outlet } from 'react-router-dom';
 
 const Wrapper = styled.div`
     min-height: 100vh;
@@ -18,7 +17,7 @@ const PageWrapper = () => {
         <Wrapper>
             <Header />
             <main>
-                <Main />
+                <Outlet />
             </main>
             <Footer />
         </Wrapper >

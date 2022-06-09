@@ -1,19 +1,23 @@
 import React from 'react';
-import PageWrapper from './components/layout/PageWrapper';
+import { Routes, Route } from 'react-router-dom';
+
+
 import Main from './pages/Main';
 import Order from './pages/Order';
 
+import PageWrapper from './components/layout/PageWrapper';
 
-export const AppRoute = {
-  MAIN: '/',
-  ORDER: '/order',
-};
 
 function App() {
   return (
-    <>
-      <PageWrapper />
-    </>
+
+    <Routes>
+      <Route path="/" element={< PageWrapper />}>
+        <Route index path="/" element={<Main />} />
+        <Route path="order" element={<Order />} />
+      </Route>
+    </Routes>
+
   );
 }
 

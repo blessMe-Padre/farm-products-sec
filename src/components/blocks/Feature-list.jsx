@@ -54,7 +54,7 @@ const FeatureList = ({ features }) => {
                     </FeaturesItem>
                 ))}
             </FeaturesUl>
-            <Button link={"/"}>Купить</Button>
+            <Button link={"/order"}>Купить</Button>
         </Features>
     ) : null;
 }

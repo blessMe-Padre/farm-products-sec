@@ -28,7 +28,7 @@ const Header = () => {
         <Container>
             <Wrapper>
                 <Logo />
-                <Button to={'/order'}>Купить билет</Button >
+                <Button link={'/order'}>Купить билет</Button >
             </Wrapper>
         </Container>
     )

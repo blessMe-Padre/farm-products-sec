@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../../../assets/logo.svg';
+import { Link } from 'react-router-dom';
 
-const LogoLink = styled.a`
+const LogoLink = styled(Link)`
     display: flex;
     margin-left: -4px;
     height: 44px;
@@ -20,7 +21,7 @@ const LogoLink = styled.a`
 
 const Logo = () => {
     return (
-        <LogoLink href='/'>
+        <LogoLink to='/'>
             <img src={logo} alt="логотип" />
             <span>Фермерские продукты</span>
         </LogoLink>
