@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 
 import Main from './pages/Main';
-import Order from './pages/Order';
+import Order from './pages/order/Order';
 
 import PageWrapper from './components/layout/PageWrapper';
 

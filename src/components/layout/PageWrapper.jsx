@@ -16,7 +16,7 @@ const PageWrapper = () => {
     return (
         <Wrapper>
             <Header />
-            <main>
+            <main style={{ backgroundColor: "#f7f7f7" }}>
                 <Outlet />
             </main>
             <Footer />
