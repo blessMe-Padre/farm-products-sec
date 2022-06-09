@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Header from './Header';
-import Main from '../../pages/Main';
 import Footer from './Footer';
+import Main from './../../pages/Main';
 
 
 const Wrapper = styled.div`
@@ -21,7 +21,7 @@ const PageWrapper = () => {
                 <Main />
             </main>
             <Footer />
-        </Wrapper>
+        </Wrapper >
     )
 }
 

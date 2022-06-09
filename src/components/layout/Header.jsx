@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Button from '../ui/buttons/Button';
+
 import Logo from '../ui/logo/Logo';
 import { Container } from '../Container';
 
@@ -27,7 +28,7 @@ const Header = () => {
         <Container>
             <Wrapper>
                 <Logo />
-                <Button>Купить билет</Button>
+                <Button to={'/order'}>Купить билет</Button >
             </Wrapper>
         </Container>
     )

@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
-const MainButton = styled.button`
+const MainButton = styled(Link)`
     display: block;
     min-height: 60px;
     padding: 0 24px;
@@ -27,11 +28,26 @@ const MainButton = styled.button`
         background-color: #fc7427;
         box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.14);
     }
+
+    &:disabled {
+        opacity: 0.5;
+        box-shadow: none;
+      }
 `;
 
-const Button = ({ children }) => {
+const Button = ({
+    children, // дочерний элемент, отображаемый в кнопке
+    link, // ссылка
+    maxWidth, // делает кнопку на 100% родителя
+    onClick, // событие по клику
+    ...props // остальные переданные пропсы
+}) => {
     return (
-        <MainButton>
+        <MainButton
+            {...props}
+            $maxWidth={maxWidth}
+            {...(link ? { to: link } : { as: "button", onClick, type: "button" })}
+        >
             {children}
         </MainButton>
     )
