@@ -1,21 +1,28 @@
-import React from 'react';
+import React from "react";
 import { Container } from '../../components/Container';
 
 import Panel from '../../components/ui/panel/panel';
-import { Title, TitleSize } from './../../components/ui/title/title'
-import { TextInput } from '../../components/ui/text-input/text-input'
+import { Title, TitleSize } from './../../components/ui/title/title';
+import { TextInput } from '../../components/ui/text-input/text-input';
+import ProductCart from './../../components/ui/product-card/ProductCart ';
 
 import {
     Column,
     StyledOrder,
     PriceLabel,
     PriceValue,
-} from './styles'
+} from './styles';
 import Button from '../../components/ui/buttons/Button';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
+
+SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 
 const Order = ({ products }) => {
     return (
-        <Container>
+        <Container >
             <StyledOrder as='form'>
                 <Column>
                     <Panel>
@@ -30,7 +37,15 @@ const Order = ({ products }) => {
                     </Panel>
                 </Column>
                 <Column>
-                    <Panel>Правая колонка</Panel>
+                    <Panel>
+                        <Swiper>
+                            {products.map((product) => (
+                                <SwiperSlide key={product.id}>
+                                    <ProductCart product={product} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </Panel>
                 </Column>
             </StyledOrder>
 
