@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 
 const MainButton = styled(Link)`
     display: block;
-    min-height: 60px;
     padding: 0 24px;
-    min-width: 260px;
     max-width: 700px;
     font-size: 18px;
     font-weight: bold;
