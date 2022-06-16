@@ -5,6 +5,8 @@ import Panel from '../../components/ui/panel/panel';
 import { Title, TitleSize } from './../../components/ui/title/title';
 import { TextInput } from '../../components/ui/text-input/text-input';
 import ProductCart from './../../components/ui/product-card/ProductCart ';
+import CheckboxList from "../../components/ui/checkbox-list/checkbox-list";
+import Button from '../../components/ui/buttons/Button';
 
 import {
     Column,
@@ -13,17 +15,23 @@ import {
     PriceValue,
     CheckboxLabel
 } from './styles';
-import Button from '../../components/ui/buttons/Button';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
-import CheckboxList from "../../components/ui/checkbox-list/checkbox-list";
-
 SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
+
 
 const Order = ({ products }) => {
     const [selectProductIds, setSelectProductIds] = useState([]);
+
+    const [swiperRef, setSwiperRef] = useState(null);
+    const handleOnClickProduct = (value, index) => {
+        if (!selectProductIds.includes(value)) {
+            swiperRef.slideTo(index, 0);
+        }
+    };
+
     return (
         <Container >
             <StyledOrder as='form'>
@@ -40,6 +48,7 @@ const Order = ({ products }) => {
                             }))}
                             selectValues={selectProductIds}
                             onChange={setSelectProductIds}
+                            onClickLabel={handleOnClickProduct}
                         />
                     </Panel>
                     <Panel>
@@ -52,7 +61,16 @@ const Order = ({ products }) => {
                 </Column>
                 <Column>
                     <Panel>
-                        <Swiper>
+                        <Swiper
+                            mousewheel
+                            spaceBetween={12}
+                            scrollbar={{ draggable: true }}
+                            slidesPerView={1}
+                            onSwiper={setSwiperRef}
+                            pagination={{
+                                type: "fraction"
+                            }}
+                        >
                             {products.map((product) => (
                                 <SwiperSlide key={product.id}>
                                     <ProductCart product={product} />
