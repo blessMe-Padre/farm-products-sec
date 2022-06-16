@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Swiper } from "swiper/react";
+import { Price } from "./../../components/ui/price/price";
 import checkboxSelect from "./../../assets/checkbox.svg"
 
 export const StyledOrder = styled.section`
@@ -21,7 +22,7 @@ export const PriceLabel = styled.span`
     margin-bottom: 6px;
 `;
 
-export const PriceValue = styled.span`
+export const PriceValue = styled(Price)`
     display: block;
     font-size: 24px;
     font-weight: bold;

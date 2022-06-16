@@ -25,6 +25,17 @@ SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 const Order = ({ products }) => {
     const [selectProductIds, setSelectProductIds] = useState([]);
 
+    //id в продукты
+    const selectProducts = selectProductIds.map((id) =>
+        products.find((product) => product.id === id)
+    );
+    //цена покупки
+    const fullPrice = selectProducts.reduce(
+        (sum, product) => (sum += product.price),
+        0
+    );
+    console.log(fullPrice);
+
     const [swiperRef, setSwiperRef] = useState(null);
     const handleOnClickProduct = (value, index) => {
         if (!selectProductIds.includes(value)) {
@@ -54,8 +65,8 @@ const Order = ({ products }) => {
                     <Panel>
                         <Title size={TitleSize.EXTRA_SMALL} marginBottom={24}>Сделать заказ</Title>
                         <TextInput placeholder='Введите адрес доставки' />
-                        <PriceLabel>Цена</PriceLabel>
-                        <PriceValue>400</PriceValue>
+                        <PriceLabel as="span">Цена</PriceLabel>
+                        <PriceValue value={fullPrice} />
                         <Button>купить</Button>
                     </Panel>
                 </Column>
