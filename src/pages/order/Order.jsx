@@ -7,6 +7,7 @@ import { TextInput } from '../../components/ui/text-input/text-input';
 import ProductCart from './../../components/ui/product-card/ProductCart ';
 import CheckboxList from "../../components/ui/checkbox-list/checkbox-list";
 import Button from '../../components/ui/buttons/Button';
+import Modal from "../../components/ui/modal/modal";
 
 import {
     Column,
@@ -19,6 +20,7 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
+import { Li, Ul } from "../../components/styled/list";
 SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 
 
@@ -29,12 +31,12 @@ const Order = ({ products }) => {
     const selectProducts = selectProductIds.map((id) =>
         products.find((product) => product.id === id)
     );
+
     //цена покупки
     const fullPrice = selectProducts.reduce(
         (sum, product) => (sum += product.price),
         0
     );
-    console.log(fullPrice);
 
     const [swiperRef, setSwiperRef] = useState(null);
     const handleOnClickProduct = (value, index) => {
@@ -42,6 +44,10 @@ const Order = ({ products }) => {
             swiperRef.slideTo(index, 0);
         }
     };
+
+    const [address, setAddress] = useState("");
+    const [modalActive, setModalActive] = useState(false);
+
 
     return (
         <Container >
@@ -64,10 +70,17 @@ const Order = ({ products }) => {
                     </Panel>
                     <Panel>
                         <Title size={TitleSize.EXTRA_SMALL} marginBottom={24}>Сделать заказ</Title>
-                        <TextInput placeholder='Введите адрес доставки' />
+                        <TextInput
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                            placeholder="Введите адрес доставки"
+                        />
                         <PriceLabel as="span">Цена</PriceLabel>
                         <PriceValue value={fullPrice} />
-                        <Button>купить</Button>
+                        <Button
+                            onClick={() => setModalActive(true)}
+                            disabled={!(selectProductIds.length && address)}
+                        >купить</Button>
                     </Panel>
                 </Column>
                 <Column>
@@ -90,10 +103,28 @@ const Order = ({ products }) => {
                         </Swiper>
                     </Panel>
                 </Column>
+                <Modal active={modalActive} setActive={setModalActive}>
+                    <Title size={TitleSize.EXTRA_SMALL} marginBottom={15}>
+                        Спасибо за заказ, вы купили:
+                    </Title>
+
+                    <Ul>
+                        {selectProducts.map((product) => (
+                            <Li>
+                                {product.name} - {product.price} руб.
+                            </Li>
+                        ))}
+                    </Ul>
+                    <p>Итого: {fullPrice} руб.</p>
+                    <p>Доставка по адресу: {address}</p>
+
+
+
+                </Modal>
             </StyledOrder>
 
-        </Container>
-    )
+        </Container >
+    );
 }
 
-export default Order
+export default Order;
