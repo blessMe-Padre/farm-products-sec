@@ -7,10 +7,11 @@ import Nav from './nav';
 
 const Wrapper = styled.header`
     display: flex;
+    flex-wrap: wrap;
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
-    height: 80px;
+    min-height: 80px;
     padding-top: 0;
     padding-bottom: 0;
     justify-content: space-between;
@@ -20,6 +21,12 @@ const Wrapper = styled.header`
     align-items: center;
     z-index: 5;
     box-sizing: border-box;
+
+    @media (max-width: 438px) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        justify-content: center;
+      }
 `;
 
 const Header = () => {

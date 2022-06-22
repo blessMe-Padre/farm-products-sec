@@ -4,14 +4,18 @@ import Button from '../ui/buttons/Button';
 import FeatureCard from '../ui/feature-card/feature-card';
 
 const Features = styled.section`
-    display: flex;
-    padding-left: 90px;
-    padding-right: 90px;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 2rem;
     box-sizing: border-box;
     padding-top: 100px;
     padding-bottom: 100px;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+
+    @media (max-width: 980px) {
+        padding: 0 1rem;
+    }
 `;
 
 const FeaturesTitle = styled.h2`
@@ -22,25 +26,28 @@ const FeaturesTitle = styled.h2`
 `;
 
 const FeaturesUl = styled.ul`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 0;
     padding: 0;
     margin-top: 44px;
     margin-bottom: 64px;
-    margin-left: -20px;
     font-size: 0;
     line-height: 0;
     text-align: center;
+
+    @media (max-width: 980px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 const FeaturesItem = styled.li`
-    display: inline-block;
-    margin-left: 20px;
-    margin-top: 20px;
+    display: block;
+    margin: 10px;
     font-size: 18px;
     line-height: 27px;
     vertical-align: top;
     text-align: left;
-    overflow: hidden;
 `;
 
 const FeatureList = ({ features }) => {

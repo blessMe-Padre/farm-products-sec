@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Article = styled.article`
-    width: 540px;
-    min-height: 197px;
     padding: 20px;
-    // background-color: #e1edce;
+    height: 100%;
     background-color:${(isNegative) => (isNegative.isNegative ? "#f8ddd7" : "#e1edce")};
     box-sizing: border-box;
 `;

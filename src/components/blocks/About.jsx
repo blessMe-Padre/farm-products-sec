@@ -9,6 +9,10 @@ const AboutSection = styled.section`
     background-image: url(${about});
     background-repeat: no-repeat;
     background-position: right;
+
+    @media (max-width: 768px) {
+        padding: 60px 0;
+    }
 `;
 
 const AboutWrapper = styled.div`

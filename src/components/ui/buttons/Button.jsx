@@ -7,6 +7,7 @@ const MainButton = styled(Link)`
     display: block;
     padding: 0 24px;
     max-width: 700px;
+    margin: 0 auto;
     font-size: 18px;
     font-weight: bold;
     line-height: 58px;
