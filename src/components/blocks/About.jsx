@@ -12,6 +12,7 @@ const AboutSection = styled.section`
 
     @media (max-width: 768px) {
         padding: 60px 0;
+        background-image: none;
     }
 `;
 
@@ -19,7 +20,7 @@ const AboutWrapper = styled.div`
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 
 `;
 

@@ -15,6 +15,10 @@ export const ArticleHeader = styled.div`
 
 export const ArticleHeaderWrapper = styled.div`
     padding-left: 40px;
+
+    @media (max-width: 430px) {
+        padding-left: 10px;
+    }
 `;
 
 export const ArticleOwner = styled.span`

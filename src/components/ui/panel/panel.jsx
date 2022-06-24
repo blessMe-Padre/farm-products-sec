@@ -8,6 +8,10 @@ export const Panel = styled.div`
   margin-bottom: 30px;
   display: block;
   background-color: white;
+
+  @media (max-width: 456px) {
+    padding: 10px;
+  }
 `;
 
 export default Panel;

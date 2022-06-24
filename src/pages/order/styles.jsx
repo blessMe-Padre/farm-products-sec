@@ -7,12 +7,20 @@ export const StyledOrder = styled.section`
     display: grid;
     grid-template-columns: 350px 1fr;
     margin-top: 40px;
+
+    @media (max-width: 1165px) {
+      grid-template-columns: 1fr;
+    }
 `;
 
 export const Column = styled.div`
     padding-right: 25px;
     overflow-y: overlay;
     max-height: 100%;
+
+    @media (max-width: 812px) {
+      padding-right: 0;
+    }
 `;
 
 export const PriceLabel = styled.span`

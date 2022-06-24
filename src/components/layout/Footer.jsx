@@ -7,7 +7,7 @@ import Logo from '../ui/logo/Logo'
 const FooterWrapper = styled.footer`
     display: flex;
     box-sizing: border-box;
-    display: flex;
+    flex-wrap: wrap;
     padding-top: 0;
     padding-bottom: 0;
     height: 79px;
@@ -15,6 +15,12 @@ const FooterWrapper = styled.footer`
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 430px) {
+        justify-content: center;
+        margin-top: 25px;
+        padding-top: 10px;
+    }
 `;
 
 const FooterCopyright = styled.span`

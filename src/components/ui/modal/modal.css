@@ -24,6 +24,13 @@
     padding: 50px 20px;
     border-radius: 5px;
     background-color: #fff;
-    width: 400px;
-    height: 400px;
+    min-width: 400px;
+    min-height: 400px;
 }
+
+@media (max-width: 812px) {
+    .modal__content {
+        min-width: 200px;
+        min-height: 200px;
+    }
+  }

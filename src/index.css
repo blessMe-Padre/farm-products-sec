@@ -33,6 +33,7 @@ code {
   margin-top: 30px;
   height: 100%;
   text-align: center;
+  flex-direction: column;
 }
 
 @media (max-width: 430px) {}

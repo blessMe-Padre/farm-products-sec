@@ -4,7 +4,7 @@ import Button from "../buttons/Button";
 
 export const TabListItem = styled(Li)`
   margin-right: 8px;
-
+  margin-bottom: 20px;
   &:last-child {
     margin-right: 0;
   }
@@ -36,6 +36,11 @@ export const TabButton = styled(Button)`
 export const Header = styled(Ul)`
   display: flex;
   margin-bottom: 16px;
+
+  @media (max-width: 812px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const Content = styled.div`

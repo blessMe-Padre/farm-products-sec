@@ -14,10 +14,19 @@ export const ContentWrapper = styled.div`
   min-height: 248px;
   padding-bottom: 30px;
   box-sizing: border-box;
+
+  @media (max-width: 812px) {
+    float: none;
+    width: 100%;
+  }
 `;
 
 export const ProductTitle = styled(Title)`
   margin-bottom: 15px;
+
+  @media (max-width: 456px) {
+    font-size: 20px;
+  }
 `;
 
 export const Price = styled.span`
