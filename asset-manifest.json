@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/blessMe-Padre/farm-products-sec/static/css/main.00c17789.css",
+    "main.js": "/blessMe-Padre/farm-products-sec/static/js/main.58ebfaba.js",
+    "static/js/787.581d6ef6.chunk.js": "/blessMe-Padre/farm-products-sec/static/js/787.581d6ef6.chunk.js",
+    "static/media/about.svg": "/blessMe-Padre/farm-products-sec/static/media/about.5099fbf9bf17e454aa46735fdd040696.svg",
+    "static/media/logo.svg": "/blessMe-Padre/farm-products-sec/static/media/logo.01f4ade67445c6672c7ec0745f612832.svg",
+    "index.html": "/blessMe-Padre/farm-products-sec/index.html",
+    "static/media/checkbox.svg": "/blessMe-Padre/farm-products-sec/static/media/checkbox.f9c14cec482370f8ca49957a40051734.svg",
+    "main.00c17789.css.map": "/blessMe-Padre/farm-products-sec/static/css/main.00c17789.css.map",
+    "main.58ebfaba.js.map": "/blessMe-Padre/farm-products-sec/static/js/main.58ebfaba.js.map",
+    "787.581d6ef6.chunk.js.map": "/blessMe-Padre/farm-products-sec/static/js/787.581d6ef6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00c17789.css",
+    "static/js/main.58ebfaba.js"
+  ]
+}
