@@ -13,7 +13,7 @@ function App() {
   return (
 
     <Routes>
-      <Route path="/" element={< PageWrapper />}>
+      <Route path="/farm-products-sec/" element={< PageWrapper />}>
         <Route index path="/" element={<Main />} />
         <Route path="order" element={<Order products={products} />} />
       </Route>
